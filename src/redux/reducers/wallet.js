@@ -1,8 +1,11 @@
 const WALLET = {
-  currencies: [],
-  expenses: [],
-  editor: false,
-  idToEdit: 0,
+  wallet: {
+    currencies: [],
+    expenses: [],
+    editor: false,
+    idToEdit: 0,
+
+  },
 };
 
 const walletInfo = (state = WALLET, action) => {

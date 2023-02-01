@@ -1,5 +1,7 @@
-const USER = {
-  email: '',
+const INITIAL_STATE = {
+  user: {
+    email: '',
+  },
 };
 
 const userProfile = (state = USER, action) => {
