@@ -9,7 +9,7 @@ class Header extends Component {
     } = this.props;
 
     return (
-      <div style={ { display: 'flex', justifyContent: 'space-between' } }>
+      <div>
         <h1>TrybeWallet</h1>
         <div>
           <h4 data-testid="email-field">{email}</h4>

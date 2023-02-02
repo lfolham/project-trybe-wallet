@@ -10,7 +10,7 @@ const INITIAL_STATE = {
 
 const walletInfo = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-  case PERSONAL_FORM_SUBMIT:
+  case 'PERSONAL_FORM_SUBMIT':
     return { ...state, ...action.payload };
   default:
     return state;
