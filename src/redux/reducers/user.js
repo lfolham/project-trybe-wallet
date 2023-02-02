@@ -4,10 +4,10 @@ const INITIAL_STATE = {
   },
 };
 
-const userProfile = (state = USER, action) => {
+const userProfile = (state = INITIAL_STATE, action) => {
   switch (action.type) {
   case PERSONAL_FORM_SUBMIT:
-    return { ...state, ...action.payload };
+    return { ...state, email: payload };
   default:
     return state;
   }

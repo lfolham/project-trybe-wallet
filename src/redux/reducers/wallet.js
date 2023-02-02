@@ -1,4 +1,4 @@
-const WALLET = {
+const INITIAL_STATE = {
   wallet: {
     currencies: [],
     expenses: [],
@@ -8,7 +8,7 @@ const WALLET = {
   },
 };
 
-const walletInfo = (state = WALLET, action) => {
+const walletInfo = (state = INITIAL_STATE, action) => {
   switch (action.type) {
   case PERSONAL_FORM_SUBMIT:
     return { ...state, ...action.payload };
