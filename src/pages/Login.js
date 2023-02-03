@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-// import { ADD_EMAIL } from '../redux/actions';
+import { actionAddemail } from '../redux/actions';
 
 class Login extends React.Component {
   state = {
@@ -20,7 +20,7 @@ class Login extends React.Component {
     const { email, password } = this.state;
     const validEmail = /\S+@\S+\.\S+/; // https://horadecodar.com.br/2020/09/13/como-validar-email-com-javascript/
     const minLenght = 5;
-    if (validEmail.test(email) && password.length >= minLenght) {
+    if (validEmail.test(email) && password.length > minLenght) {
       this.setState({ isDisabled: false });
     } else {
       this.setState({ isDisabled: true });
@@ -30,7 +30,7 @@ class Login extends React.Component {
   loginSuccessful = () => {
     const { dispatch, history } = this.props;
     const { email } = this.state;
-    dispatch(ADD_EMAIL(email));
+    dispatch(actionAddemail(email));
     history.push('/carteira');
   };
 
@@ -46,9 +46,9 @@ class Login extends React.Component {
             data-testid="email-input"
             id="inputEmail"
             type="email"
+            onChange={ this.handleChange }
             name="email"
             value={ email }
-            onChange={ this.handleChange }
           />
         </label>
         <label htmlFor="inputPassword">
@@ -59,9 +59,9 @@ class Login extends React.Component {
             data-testid="password-input"
             id="inputPassword"
             type="password"
+            onChange={ this.handleChange }
             name="password"
             value={ password }
-            onChange={ this.handleChange }
           />
         </label>
 
