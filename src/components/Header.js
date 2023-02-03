@@ -10,12 +10,9 @@ class Header extends Component {
 
     return (
       <div>
-        <h1>TrybeWallet</h1>
-        <div>
-          <h4 data-testid="email-field">{email}</h4>
-          <h4 data-testid="total-field"> 0 </h4>
-          <h4 data-testid="header-currency-field"> BRL </h4>
-        </div>
+        <h3 data-testid="email-field">{email}</h3>
+        <p data-testid="total-field"> 0 </p>
+        <p data-testid="header-currency-field">BLR</p>
       </div>
     );
   }
