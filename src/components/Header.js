@@ -10,6 +10,7 @@ class Header extends Component {
 
     return (
       <div>
+        <h1>TRYBE WALLET</h1>
         <h3 data-testid="email-field">{email}</h3>
         <p data-testid="total-field"> 0 </p>
         <p data-testid="header-currency-field">BRL</p>

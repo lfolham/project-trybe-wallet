@@ -1,3 +1,5 @@
+import { CHOOSE_COIN } from '../actions';
+
 const INITIAL_STATE = {
   wallet: {
     currencies: [],
@@ -8,13 +10,15 @@ const INITIAL_STATE = {
   },
 };
 
-const walletInfo = (state = INITIAL_STATE, action) => {
+const walletToFill = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-  case 'PERSONAL_FORM_SUBMIT':
-    return { ...state, ...action.payload };
+  case CHOOSE_COIN:
+    return {
+      ...state,
+      currencies: Object.keys(action.payload).filter((coin) => coin !== 'USDT'),
+    };
   default:
     return state;
   }
 };
-
-export default walletInfo;
+export default walletToFill;

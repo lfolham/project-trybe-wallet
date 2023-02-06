@@ -7,7 +7,7 @@ const INITIAL_STATE = {
 const userProfile = (state = INITIAL_STATE, action) => {
   switch (action.type) {
   case ADD_EMAIL:
-    return { ...state, email: action.payload };
+    return { ...state, email: action.email };
   default:
     return state;
   }

@@ -1,22 +1,21 @@
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
-import { fetchWallet } from '../redux/actions';
+import { walletData } from '../redux/actions';
 
 class WalletForm extends Component {
-  async componentDidMount() {
+  componentDidMount() {
     const { dispatch } = this.props;
-    console.log('asdad');
-    await dispatch(fetchWallet());
+    dispatch(walletData());
   }
 
   render() {
-    const { currencies } = this.props;
+    const { currencies } = this.state;
     console.log(currencies);
+
     return (
       <div>
         <h2>Wallet Form:</h2>
-
         <label htmlFor="valor">
           Valor :
           <input
@@ -27,23 +26,16 @@ class WalletForm extends Component {
             placeholder="Digite o valor"
           />
         </label>
-
         <br />
-        <label htmlFor="select">
-          Moeda:
-          <select
-            data-testid="currency-input"
-            id="currency"
-          >
-            {
-              currencies && currencies
-                .map((coin) => (<option key={ coin }>{coin}</option>))
-            }
+        <label htmlFor="selectCurrency" className="labelInputSelect">
+          Moeda
+          <select name="selectCurrency" data-testid="currency-input">
+            {currencies.map((currency) => (
+              <option key={ currency } value={ currency }>{ currency }</option>
+            ))}
           </select>
         </label>
-
         <br />
-
         <label htmlFor="metodo-pagamento">
           Método pagamento:
           <select data-testid="method-input">
@@ -52,9 +44,7 @@ class WalletForm extends Component {
             <option value="debito">Cartão de débito</option>
           </select>
         </label>
-
         <br />
-
         <label htmlFor="descricao-imput">
           Categoria:
           <select name="tag-input" data-testid="tag-input" id="">
@@ -65,9 +55,7 @@ class WalletForm extends Component {
             <option value="Saúde">Saúde</option>
           </select>
         </label>
-
         <br />
-
         <label htmlFor="descricao">
           Descrição :
           <input
@@ -81,14 +69,11 @@ class WalletForm extends Component {
     );
   }
 }
-
 WalletForm.propTypes = {
-  currencies: PropTypes.arrayOf(PropTypes.string),
   dispatch: PropTypes.func,
+  moedas: PropTypes.array,
 }.isRequired;
-
-const mapStateToProps = ({ wallet }) => ({
-  currencies: wallet.currencies,
+const mapStateToProps = (state) => ({
+  moedas: state.wallet.currencies,
 });
-
 export default connect(mapStateToProps)(WalletForm);
