@@ -2,6 +2,7 @@ export const ADD_EMAIL = 'ADD_EMAIL';
 export const ADD_VALUE = 'ADD_VALUE';
 export const ADD_EXPENSE = 'ADD__EXPENSE';
 export const CHOOSE_COIN = 'CHOOSE_COIN';
+export const ADD_NEWEXPENSE = 'ADD_NEWEXPENSE';
 
 export const actionAddemail = (email) => ({
   type: ADD_EMAIL,
@@ -15,6 +16,11 @@ export const actionValue = (value) => ({
 
 export const actionAddExpense = (payload) => ({
   type: ADD_EXPENSE,
+  payload,
+});
+
+export const actionNewExpense = (payload) => ({
+  type: ADD_NEWEXPENSE,
   payload,
 });
 
