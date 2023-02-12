@@ -1,4 +1,4 @@
-import { CHOOSE_COIN, ADD_EXPENSE } from '../actions';
+import { CHOOSE_COIN, ADD_EXPENSE, DELET_EXPENSE } from '../actions';
 
 const INITIAL_STATE = {
 
@@ -21,6 +21,11 @@ const walletToFill = (state = INITIAL_STATE, action) => {
     return {
       ...state,
       expenses: [...state.expenses, action.payload],
+    };
+  case DELET_EXPENSE:
+    return {
+      ...state,
+      expenses: action.expenses,
     };
   default:
     return state;

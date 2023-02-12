@@ -3,6 +3,8 @@ export const ADD_VALUE = 'ADD_VALUE';
 export const ADD_EXPENSE = 'ADD__EXPENSE';
 export const CHOOSE_COIN = 'CHOOSE_COIN';
 export const ADD_NEWEXPENSE = 'ADD_NEWEXPENSE';
+export const EDIT_EXPENSE = 'EDIT_EXPENSE';
+export const DELET_EXPENSE = 'DELET_EXPENSE';
 
 export const actionAddemail = (email) => ({
   type: ADD_EMAIL,
@@ -19,14 +21,24 @@ export const actionAddExpense = (payload) => ({
   payload,
 });
 
+export const chooseCoin = (coin) => ({
+  type: CHOOSE_COIN,
+  payload: coin,
+});
+
 export const actionNewExpense = (payload) => ({
   type: ADD_NEWEXPENSE,
   payload,
 });
 
-export const chooseCoin = (coin) => ({
-  type: CHOOSE_COIN,
-  payload: coin,
+export const actionEditExpense = (payload) => ({
+  type: EDIT_EXPENSE,
+  payload,
+});
+
+export const actionDeleteExpense = (expenses) => ({
+  type: DELET_EXPENSE,
+  expenses,
 });
 
 // export function fetchWallet() {
