@@ -26,6 +26,7 @@ class Table extends Component {
               <th>Câmbio utilizado</th>
               <th>Valor convertido</th>
               <th>Moeda de conversão</th>
+              <th>Editar/Excluir</th>
 
             </tr>
           </thead>
@@ -51,7 +52,7 @@ class Table extends Component {
                         data-testid="edit-btn"
                         id={ currency.id }
                       >
-                        Edit
+                        Editar
                       </button>
                       <button
                         data-testid="delete-btn"
