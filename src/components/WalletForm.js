@@ -20,6 +20,10 @@ class WalletForm extends Component {
     await dispatch(fetchWallet());
   }
 
+  // componentDidUpdate if executar a logica de edição
+  // o editor esta true?
+  // o ID está sendo editado é diferente da linha 8
+
   handleChange = ({ target: { name, value } }) => {
     this.setState({
       [name]: value,

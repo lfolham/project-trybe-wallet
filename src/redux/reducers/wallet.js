@@ -4,7 +4,7 @@ const INITIAL_STATE = {
 
   currencies: [],
   expenses: [],
-  editor: false,
+  editor: false, // true
   idToEdit: 0,
 
 };
@@ -27,6 +27,8 @@ const walletToFill = (state = INITIAL_STATE, action) => {
       ...state,
       expenses: action.expenses,
     };
+
+    // expense edit - elemento que está sendo editado
   default:
     return state;
   }
